@@ -26,7 +26,6 @@ class CombinedFinancialView(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Combined Visualization Overview")
-        print("hello")
         self.setGeometry(100, 100, 1200, 800)
         
         # Create scroll area
