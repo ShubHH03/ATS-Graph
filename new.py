@@ -109,7 +109,7 @@ class CombinedFinancialView(QMainWindow):
         title7.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
         layout.addWidget(title7)
         important_expenses = ImportantExpenses()
-        important_expenses.setFixedHeight(700)
+        important_expenses.setFixedHeight(800)
         layout.addWidget(important_expenses) 
 
 
@@ -155,13 +155,13 @@ class CombinedFinancialView(QMainWindow):
         suspense_debit.setFixedHeight(700)    
         layout.addWidget(suspense_debit)
 
-        # title13 = QLabel("Receipt Voucher Analysis")
-        # title13.setAlignment(Qt.AlignmentFlag.AlignCenter)    
-        # title13.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")    
-        # layout.addWidget(title13)
-        # receipt_voucher = Receiptvoucher()  
-        # receipt_voucher.setFixedHeight(700)
-        # layout.addWidget(receipt_voucher)
+        title13 = QLabel("Receipt Voucher Analysis")
+        title13.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title13.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")    
+        layout.addWidget(title13)
+        receipt_voucher = Receiptvoucher()  
+        receipt_voucher.setFixedHeight(700)
+        layout.addWidget(receipt_voucher)
 
         title14 = QLabel("Suspense Credit Analysis")
         title14.setAlignment(Qt.AlignmentFlag.AlignCenter)    

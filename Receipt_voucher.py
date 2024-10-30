@@ -54,7 +54,7 @@ class Receiptvoucher(QMainWindow):
         # Add controls
         controls_layout = QHBoxLayout()
         self.chart_type = QComboBox()
-        self.chart_type.addItems(['Bar + Spline', 'Bar Only', 'Spline Only'])
+        self.chart_type.addItems(['Bar + Spline'])
         self.chart_type.currentTextChanged.connect(self.update_chart)
         
         self.theme_selector = QComboBox()
