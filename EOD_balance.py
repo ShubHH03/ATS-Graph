@@ -28,13 +28,17 @@ class EODBalanceChart(QMainWindow):
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
             <style>
                 body { 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     margin: 0; 
                     padding: 20px; 
                     font-family: Arial, sans-serif;
                     background-color: #f8fafc;
                 }
                 .chart-container { 
-                    width: 90%;
+                    width: 80%;
                     height: calc(100vh - 40px);
                     background-color: white;
                     padding: 10px;
