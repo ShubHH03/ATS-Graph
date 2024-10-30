@@ -22,6 +22,7 @@ from Summary_otherExpenses import OtherExpenses
 from Reversal import Reversal
 from Suspense_debit import SuspenseDebit
 from Receipt_voucher import Receiptvoucher
+from Suspense_Credit import SuspenseCredit
 class CombinedFinancialView(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -155,15 +156,21 @@ class CombinedFinancialView(QMainWindow):
         suspense_debit.setFixedHeight(700)    
         layout.addWidget(suspense_debit)
 
-        title13 = QLabel("Receipt Voucher Analysis")
-        title13.setAlignment(Qt.AlignmentFlag.AlignCenter)    
-        title13.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")    
-        layout.addWidget(title13)
-        receipt_voucher = Receiptvoucher()  
-        receipt_voucher.setFixedHeight(700)
-        layout.addWidget(receipt_voucher)
+        # title13 = QLabel("Receipt Voucher Analysis")
+        # title13.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        # title13.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")    
+        # layout.addWidget(title13)
+        # receipt_voucher = Receiptvoucher()  
+        # receipt_voucher.setFixedHeight(700)
+        # layout.addWidget(receipt_voucher)
 
-    
+        title14 = QLabel("Suspense Credit Analysis")
+        title14.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title14.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title14)
+        suspense_credit = SuspenseCredit()
+        suspense_credit.setFixedHeight(700)
+        layout.addWidget(suspense_credit)
 
         
         # Add spacing between charts

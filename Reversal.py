@@ -20,7 +20,7 @@ class Reversal(QMainWindow):
             'Debit': [None, 199.00],
             'Credit': [62.00, None],
             'Balance': [1974571.12, -692538.43],
-            'Category': ['Refund/Reversal', 'Refund/Reversal']
+          
         }
         
         self.df = pd.DataFrame(self.data)
@@ -227,13 +227,7 @@ class Reversal(QMainWindow):
                     </h2>
                     <canvas id="debitCreditChart"></canvas>
                 </div>
-                <div class="chart-container">
-                    <h2 class="chart-title">
-                        <i class="fas fa-chart-pie"></i>
-                        Category Distribution
-                    </h2>
-                    <canvas id="categoryChart"></canvas>
-                </div>
+
             </div>
 
             <script>
@@ -339,39 +333,7 @@ class Reversal(QMainWindow):
                     }}
                 }});
 
-                // Category Distribution Chart
-                new Chart(document.getElementById('categoryChart'), {{
-                    type: 'doughnut',
-                    data: {{
-                        labels: {json.dumps(self.df['Category'].value_counts().index.tolist())},
-                        datasets: [{{
-                            data: {json.dumps(self.df['Category'].value_counts().values.tolist())},
-                            backgroundColor: [
-                                'rgba(79, 172, 254, 0.8)',
-                                'rgba(0, 242, 254, 0.8)',
-                                'rgba(131, 96, 195, 0.8)',
-                                'rgba(72, 207, 173, 0.8)',
-                                'rgba(255, 99, 132, 0.8)'
-                            ],
-                            borderColor: 'rgba(255, 255, 255, 0.1)',
-                            borderWidth: 2
-                        }}]
-                    }},
-                    options: {{
-                        responsive: true,
-                        plugins: {{
-                            legend: {{
-                                position: 'top',
-                                labels: {{
-                                    font: {{
-                                        family: 'Poppins',
-                                        size: 12
-                                    }}
-                                }}
-                            }}
-                        }}
-                    }}
-                }});
+                
 
                 // Add hover effect to stat cards
                 document.querySelectorAll('.stat-card').forEach(card => {{
