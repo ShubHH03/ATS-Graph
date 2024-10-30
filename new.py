@@ -4,8 +4,7 @@ import tempfile
 import plotly.graph_objs as go
 from PyQt6.QtCore import QDateTime, Qt, QUrl
 from PyQt6.QtGui import QPainter
-from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
-                             QLabel, QScrollArea)
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QScrollArea)
 from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QDateTimeAxis, QValueAxis
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
@@ -16,11 +15,18 @@ from Debtors import DebtorsChart
 from Cash_withdrawal import StackedBarChart
 from Cash_Deposit import CashDeposit
 from Payment_Voucher import PaymentDashboard
-
+from Summary_important_expenses import ImportantExpenses
+from Summary_particular import Particular
+from Summary_income import Income
+from Summary_otherExpenses import OtherExpenses
+from Reversal import Reversal
+from Suspense_debit import SuspenseDebit
+from Receipt_voucher import Receiptvoucher
 class CombinedFinancialView(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Combined Visualization Overview")
+        print("hello")
         self.setGeometry(100, 100, 1200, 800)
         
         # Create scroll area
@@ -96,6 +102,68 @@ class CombinedFinancialView(QMainWindow):
         payment_voucher = PaymentDashboard()
         payment_voucher.setFixedHeight(700)
         layout.addWidget(payment_voucher)
+
+
+        title7 = QLabel("Important Expenses Analysis")
+        title7.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title7.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title7)
+        important_expenses = ImportantExpenses()
+        important_expenses.setFixedHeight(700)
+        layout.addWidget(important_expenses) 
+
+
+        title8 = QLabel("Particular Analysis")
+        title8.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title8.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title8)
+        particular = Particular()
+        particular.setFixedHeight(700)
+        layout.addWidget(particular)
+
+
+        title9 = QLabel("Income Analysis")
+        title9.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title9.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title9)
+        income = Income()
+        income.setFixedHeight(700)
+        layout.addWidget(income)
+
+        title10 = QLabel("Other Expenses Analysis")
+        title10.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title10.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title10)
+        other_expenses = OtherExpenses()
+        other_expenses.setFixedHeight(700)
+        layout.addWidget(other_expenses)
+
+
+        title11 = QLabel("Reversal Analysis")
+        title11.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title11.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title11)
+        reversal = Reversal()
+        reversal.setFixedHeight(700)
+        layout.addWidget(reversal)
+
+        title12 = QLabel("Suspense Debit Analysis")
+        title12.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title12.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title12)
+        suspense_debit = SuspenseDebit()
+        suspense_debit.setFixedHeight(700)    
+        layout.addWidget(suspense_debit)
+
+        title13 = QLabel("Receipt Voucher Analysis")
+        title13.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title13.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")    
+        layout.addWidget(title13)
+        receipt_voucher = Receiptvoucher()  
+        receipt_voucher.setFixedHeight(700)
+        layout.addWidget(receipt_voucher)
+
+    
 
         
         # Add spacing between charts
