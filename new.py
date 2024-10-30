@@ -22,11 +22,11 @@ from Summary_otherExpenses import OtherExpenses
 from Reversal import Reversal
 from Suspense_debit import SuspenseDebit
 from Receipt_voucher import Receiptvoucher
+from Suspense_Credit import SuspenseCredit
 class CombinedFinancialView(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Combined Visualization Overview")
-        print("hello")
         self.setGeometry(100, 100, 1200, 800)
         
         # Create scroll area
@@ -109,7 +109,7 @@ class CombinedFinancialView(QMainWindow):
         title7.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
         layout.addWidget(title7)
         important_expenses = ImportantExpenses()
-        important_expenses.setFixedHeight(700)
+        important_expenses.setFixedHeight(800)
         layout.addWidget(important_expenses) 
 
 
@@ -163,7 +163,13 @@ class CombinedFinancialView(QMainWindow):
         receipt_voucher.setFixedHeight(700)
         layout.addWidget(receipt_voucher)
 
-    
+        title14 = QLabel("Suspense Credit Analysis")
+        title14.setAlignment(Qt.AlignmentFlag.AlignCenter)    
+        title14.setStyleSheet("QLabel { font-size: 16pt; font-weight: bold; margin: 10px; }")
+        layout.addWidget(title14)
+        suspense_credit = SuspenseCredit()
+        suspense_credit.setFixedHeight(700)
+        layout.addWidget(suspense_credit)
 
         
         # Add spacing between charts

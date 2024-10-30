@@ -19,7 +19,8 @@ class Reversal(QMainWindow):
             'Value Date': ['22-01-2024', '22-03-2024'],
             'Debit': [None, 199.00],
             'Credit': [62.00, None],
-            'Balance': [1974571.12, -692538.43]
+            'Balance': [1974571.12, -692538.43],
+          
         }
         
         self.df = pd.DataFrame(self.data)
@@ -226,6 +227,7 @@ class Reversal(QMainWindow):
                     </h2>
                     <canvas id="debitCreditChart"></canvas>
                 </div>
+
             </div>
 
             <script>
@@ -331,6 +333,7 @@ class Reversal(QMainWindow):
                     }}
                 }});
 
+                
 
                 // Add hover effect to stat cards
                 document.querySelectorAll('.stat-card').forEach(card => {{
